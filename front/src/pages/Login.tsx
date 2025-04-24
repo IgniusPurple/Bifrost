@@ -44,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:from-gray-900 dark:to-gray-800 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-200 dark:from-gray-900 dark:to-gray-800 p-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
@@ -52,7 +52,7 @@ const Login = () => {
               <DollarSign className="h-8 w-8 text-white" />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-finance-dark dark:text-white">Finance Toolkit</h1>
+          <h1 className="text-2xl font-bold text-finance-dark dark:text-white">Biofrost</h1>
           <p className="text-finance-gray dark:text-gray-300 mt-2">
             Entre para acessar suas ferramentas financeiras
           </p>
@@ -85,7 +85,8 @@ const Login = () => {
                 />
               </div>
               <div className="text-right">
-                <Button 
+                <Button
+                  type="button" 
                   variant="link" 
                   className="text-xs p-0 h-auto text-finance-blue"
                   onClick={() => navigate("/recuperar-senha")}
@@ -117,7 +118,7 @@ const Login = () => {
         </Card>
         
         <div className="mt-6 text-center text-sm text-finance-gray dark:text-gray-400">
-          © {new Date().getFullYear()} Finance Toolkit. Todos os direitos reservados.
+          © {new Date().getFullYear()} Biofrost. Todos os direitos reservados.
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 
 import { FinancialConcept } from "@/types/FinancialConcept";
+import { title } from "process";
 
 export const financialConcepts: FinancialConcept[] = [
   {
@@ -14,12 +15,12 @@ Investimentos atrelados à Selic, como o Tesouro Selic, tendem a acompanhar essa
     recommendations: [
       {
         title: "O que é a Taxa Selic e como ela afeta sua vida",
-        url: "https://www.youtube.com/watch?v=UDgpEwMzxbQ",
+        url: "https://www.youtube.com/watch?v=GgBfeGdGZdM",
         platform: "youtube",
       },
       {
         title: "Como a Taxa Selic afeta seus investimentos",
-        url: "https://www.youtube.com/watch?v=2h6QVtMxYJE",
+        url: "https://www.youtube.com/watch?v=VE9JFXN5GbA",
         platform: "youtube",
       }
     ],
@@ -38,7 +39,7 @@ Investimentos atrelados ao IPCA, como o Tesouro IPCA+, oferecem proteção contr
     recommendations: [
       {
         title: "O que é IPCA e como ele afeta seus investimentos",
-        url: "https://www.youtube.com/watch?v=L1HMZ2TU9LI",
+        url: "https://www.youtube.com/watch?v=DBL0275mZvo",
         platform: "youtube",
       }
     ],
@@ -59,12 +60,12 @@ Esse tipo de investimento é muito interessante para a proteção do poder de co
     recommendations: [
       {
         title: "Tesouro IPCA+: Vale a pena investir?",
-        url: "https://www.youtube.com/watch?v=bYQQvcF2xGk",
+        url: "https://www.youtube.com/watch?v=ceER-djqCuk&t=45s",
         platform: "youtube",
       }
     ],
     riskLevel: "Baixo",
-    expectedReturn: "IPCA + 6% ao ano",
+    expectedReturn: "IPCA + 7% ao ano?",
     timeframe: "Médio a longo prazo",
     type: "fixedIncome"
   },
@@ -80,9 +81,15 @@ As LCIs podem ter rentabilidade prefixada, pós-fixada (atrelada ao CDI) ou híb
     recommendations: [
       {
         title: "O que é LCI e como investir?",
-        url: "https://www.youtube.com/watch?v=SNnwlSq2D_I",
+        url: "https://www.youtube.com/watch?v=pW6IHuR5Ugw",
         platform: "youtube",
+      },
+      {
+        title:"LCI e LCA: o que são, rentabilidade e como investir!",
+        url:"https://riconnect.rico.com.vc/blog/lci-e-lca/?campaignid=316171546&adgroupid=55392294370&feeditemid=&targetid=dsa-19959388920&loc_interest_ms=&loc_physical_ms=9197256&matchtype=&network=g&device=c&devicemodel=&ifmobile=&ifmobile=0&ifsearch=1&ifsearch=&ifcontent=0&ifcontent=&creative=340508776298&keyword=&placement=&target=&utm_term=&gad_source=1",
+        platform:"article"
       }
+      
     ],
     riskLevel: "Baixo",
     expectedReturn: "90% a 100% do CDI",
@@ -101,7 +108,7 @@ Esse investimento costuma ter um prazo mínimo de aplicação (carência), duran
     recommendations: [
       {
         title: "LCA: O que é e vale a pena investir?",
-        url: "https://www.youtube.com/watch?v=BjfF9SYLLbA",
+        url: "https://www.youtube.com/watch?v=pLjW29-FibA",
         platform: "youtube",
       }
     ],
@@ -121,13 +128,13 @@ O PGBL é indicado para quem faz declaração completa do IR, permitindo deduzir
 A tributação pode ser regressiva (alíquotas que diminuem conforme o tempo de investimento) ou progressiva (alíquotas que variam conforme o valor resgatado). Importante analisar as taxas cobradas (administração, carregamento), pois podem consumir parte da rentabilidade.`,
     recommendations: [
       {
-        title: "Previdência Privada vale a pena? PGBL ou VGBL?",
-        url: "https://www.youtube.com/watch?v=Y1GxQXPDlTw",
+        title: "Previdência PGBL ou VGBL? Regressiva ou progressiva?",
+        url: "https://www.youtube.com/watch?v=sdpc4Xv8ZeA",
         platform: "youtube",
       },
       {
         title: "Os erros que você comete ao investir em Previdência Privada",
-        url: "https://www.youtube.com/watch?v=klViqHla9Yo",
+        url: "https://www.youtube.com/watch?v=0E6EUF68cgs",
         platform: "youtube",
       }
     ],
@@ -150,12 +157,12 @@ Por envolver o mercado de ações, investimentos atrelados ao Ibovespa são cons
     recommendations: [
       {
         title: "O que é o Ibovespa e como investir",
-        url: "https://www.youtube.com/watch?v=XCUEwKpOQjQ",
+        url: "https://www.youtube.com/watch?v=xPC8AE1G2l8",
         platform: "youtube",
       },
       {
-        title: "Como funciona o ETF BOVA11",
-        url: "https://www.youtube.com/watch?v=vDTjiKkOlr0",
+        title: "Como funciona a bolsa de valores??",
+        url: "https://www.youtube.com/watch?v=zE3MhwFUpnA",
         platform: "youtube",
       }
     ],
@@ -163,5 +170,51 @@ Por envolver o mercado de ações, investimentos atrelados ao Ibovespa são cons
     expectedReturn: "Variável, historicamente superior à renda fixa no longo prazo",
     timeframe: "Longo prazo",
     type: "index"
+  },
+  {
+    id: "Pre-fixado-pos-fixado",
+    title: "Pré-fixado & Pós-fixado",
+    description: "Em empréstimos e investimentos 'pré-fixado' e 'pós-fixado' referem-se à forma como a taxa de juros é determinada",
+    details: `No pré-fixado, a taxa de juros é definida no momento da contratação, garantindo previsibilidade sobre quanto você vai ganhar ou pagar. Já no pós-fixado, o rendimento varia conforme índices da economia, como CDI, Selic ou IPCA, podendo ser mais vantajoso quando esses indicadores estão em alta.
+
+Enquanto o pré-fixado oferece mais segurança, o pós-fixado pode render mais, mas com maior exposição às mudanças do mercado.`,
+    recommendations: [
+      {
+        title: "Prefixado Ou Pósfixado?",
+        url: "https://www.youtube.com/watch?v=Pe8o49H13Iw",
+        platform: "youtube",
+      },
+      {
+        title: "Como funciona Pré e Pós fixado?",
+        url: "https://blog.genialinvestimentos.com.br/diferenca-entre-prefixado-pos-fixado/",
+        platform: "article",
+      }
+    ],
+    riskLevel: "Baixo",
+    expectedReturn: "Variável, sendo definido no início ou variavel conforme a taxa, respectivamente pré e pós",
+    timeframe: "Curto e Médio",
+    type: "fixedIncome"
+  },
+  {
+    id: "divida",
+    title: "Empréstimo & financiamentos",
+    description: "Empréstimos, Financiamento, Juros e Juros compostos, tudo isso pode levar a uma bola de neve",
+    details: `Dívida é o valor que uma pessoa ou empresa deve a outra, geralmente após tomar um empréstimo ou deixar de pagar algo no prazo.
+    
+    Ela pode crescer com o tempo se não for paga, especialmente por conta dos juros.`,
+    recommendations: [
+      {
+        title: "Passo a passo de como quitar o débito",
+        url: "https://www.youtube.com/watch?v=uY5vlMYFN_Q",
+        platform: "youtube",
+      },
+
+    ],
+    riskLevel: "Alto",
+    expectedReturn: "Variável, sendo definido no início ou variavel conforme a taxa báse negóciada.",
+    timeframe: "Médio, Longo prazo",
+    type: "debt"
   }
 ];
+
+

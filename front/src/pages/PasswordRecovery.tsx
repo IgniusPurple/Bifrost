@@ -49,7 +49,7 @@ const PasswordRecovery = () => {
               <DollarSign className="h-8 w-8 text-white" />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-finance-dark dark:text-white">Finance Toolkit</h1>
+          <h1 className="text-2xl font-bold text-finance-dark dark:text-white">Biofrost</h1>
           <p className="text-finance-gray dark:text-gray-300 mt-2">
             Recuperação de senha
           </p>

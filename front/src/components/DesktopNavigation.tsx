@@ -46,7 +46,7 @@ export function DesktopNavigation() {
     <Sidebar className="hidden lg:flex h-screen border-r">
       <SidebarContent>
         <div className="px-6 py-5 border-b">
-          <h2 className="text-xl font-bold text-finance-teal">Finance Toolkit</h2>
+          <h2 className="text-xl font-bold text-finance-teal">Biofrost</h2>
         </div>
         <SidebarGroup>
           <SidebarGroupLabel>Menu</SidebarGroupLabel>

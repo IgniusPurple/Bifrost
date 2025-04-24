@@ -89,30 +89,30 @@ const FinancialEducation = () => {
         </div>
 
         <p className="text-gray-600 dark:text-gray-300">
-          Aprender sobre finanças é o primeiro passo para construir um futuro financeiro sólido. 
-          Explore os indicadores econômicos, nosso conteúdo educacional e acompanhe seu resumo financeiro.
+          Principais taxas classificado como pouco risco com garantia FGC .<br></br>
+          Conhecimento é poder, poder é sua vida financeira.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <FinancialIndicator
             title="Taxa Selic"
-            value="10,5%"
-            change="+0.5"
-            isPositive={false}
+            value="14,25%"
+            change="+0.8"
+            isPositive={true}
             description="Taxa básica de juros da economia"
           />
           <FinancialIndicator
             title="IPCA (12m)"
-            value="4,2%"
-            change="-0.3"
+            value="4,83%"
+            change="9.68"
             isPositive={true}
             description="Índice oficial de inflação"
           />
           <FinancialIndicator
             title="CDI"
-            value="10,4%"
+            value="14,15%"
             change="+0.5"
-            isPositive={false}
+            isPositive={true}
             description="Certificado de Depósito Interbancário"
           />
         </div>
