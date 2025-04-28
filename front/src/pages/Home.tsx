@@ -27,7 +27,7 @@ const Home = () => {
   }, []);
 
   return (
-    <AppLayout title="Biofrost" showProfile>
+    <AppLayout title="Bifröst" showProfile>
       <div>
         <UserProfile />
         

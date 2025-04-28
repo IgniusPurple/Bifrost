@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import FinancialIndicator from "@/components/FinancialIndicator";
 import FinancialSummary from "@/components/FinancialSummary";
 import FinancialDetails from "@/components/FinancialDetails";
+import UserFinancialInput, { FinancialEntry } from "@/components/UserFinancialInput";
 import { AppLayout } from "@/components/AppLayout";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
@@ -10,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, ExternalLink, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Define Income type to match what's expected in components
+// Base structure for income and expense objects to match component expectations
 interface Income {
   id: string;
   description: string;
@@ -20,7 +21,6 @@ interface Income {
   recurrent: boolean;
 }
 
-// Define Expense type
 interface Expense {
   id: string;
   description: string;
@@ -30,25 +30,30 @@ interface Expense {
   essential: boolean;
 }
 
+// Helper function to transform FinancialEntry to Income
+const mapToIncome = (entry: FinancialEntry): Income => ({
+  id: entry.id,
+  description: entry.description,
+  amount: entry.amount,
+  source: "Personalizado",
+  date: new Date().toISOString().split('T')[0],
+  recurrent: false
+});
+
+// Helper function to transform FinancialEntry to Expense
+const mapToExpense = (entry: FinancialEntry): Expense => ({
+  id: entry.id,
+  description: entry.description,
+  amount: entry.amount,
+  category: "Outros",
+  date: new Date().toISOString().split('T')[0],
+  essential: false
+});
+
 const FinancialEducation = () => {
-  // Mock data for the components that require props
-  const mockExpenses: Expense[] = [{
-    id: "1",
-    description: "Aluguel",
-    amount: 1200,
-    category: "Moradia",
-    date: "2025-04-01",
-    essential: true
-  }];
-  
-  const mockIncomes: Income[] = [{
-    id: "1",
-    description: "Salário",
-    amount: 5000,
-    source: "Emprego",
-    date: "2025-04-05",
-    recurrent: true
-  }];
+  // State for user financial data
+  const [userIncomes, setUserIncomes] = useState<Income[]>([]);
+  const [userExpenses, setUserExpenses] = useState<Expense[]>([]);
 
   const [activeDetail] = useState({
     title: "Inflação",
@@ -78,6 +83,15 @@ const FinancialEducation = () => {
     }
   ];
 
+  // Handler functions for updating user financial data
+  const handleUpdateIncomes = (entries: FinancialEntry[]) => {
+    setUserIncomes(entries.map(mapToIncome));
+  };
+
+  const handleUpdateExpenses = (entries: FinancialEntry[]) => {
+    setUserExpenses(entries.map(mapToExpense));
+  };
+
   return (
     <AppLayout title="Educação Financeira">
       <div className="space-y-8">
@@ -89,30 +103,30 @@ const FinancialEducation = () => {
         </div>
 
         <p className="text-gray-600 dark:text-gray-300">
-          Principais taxas classificado como pouco risco com garantia FGC .<br></br>
-          Conhecimento é poder, poder é sua vida financeira.
+          Aprender sobre finanças é o primeiro passo para construir um futuro financeiro sólido. 
+          Explore os indicadores econômicos, nosso conteúdo educacional e acompanhe seu resumo financeiro.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <FinancialIndicator
             title="Taxa Selic"
-            value="14,25%"
-            change="+0.8"
-            isPositive={true}
+            value="10,5%"
+            change="+0.5"
+            isPositive={false}
             description="Taxa básica de juros da economia"
           />
           <FinancialIndicator
             title="IPCA (12m)"
-            value="4,83%"
-            change="9.68"
+            value="4,2%"
+            change="-0.3"
             isPositive={true}
             description="Índice oficial de inflação"
           />
           <FinancialIndicator
             title="CDI"
-            value="14,15%"
+            value="10,4%"
             change="+0.5"
-            isPositive={true}
+            isPositive={false}
             description="Certificado de Depósito Interbancário"
           />
         </div>
@@ -145,12 +159,13 @@ const FinancialEducation = () => {
         </div>
 
         <Tabs defaultValue="resumo" className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="resumo">Resumo Financeiro</TabsTrigger>
             <TabsTrigger value="detalhes">Detalhes</TabsTrigger>
+            <TabsTrigger value="personalizar">Personalizar Dados</TabsTrigger>
           </TabsList>
           <TabsContent value="resumo" className="pt-4">
-            <FinancialSummary expenses={mockExpenses} incomes={mockIncomes} />
+            <FinancialSummary expenses={userExpenses} incomes={userIncomes} />
           </TabsContent>
           <TabsContent value="detalhes" className="pt-4">
             <FinancialDetails 
@@ -158,6 +173,12 @@ const FinancialEducation = () => {
               description={activeDetail.description} 
               details={activeDetail.details}
               onBack={() => {}} 
+            />
+          </TabsContent>
+          <TabsContent value="personalizar" className="pt-4">
+            <UserFinancialInput 
+              onUpdateIncomes={handleUpdateIncomes}
+              onUpdateExpenses={handleUpdateExpenses}
             />
           </TabsContent>
         </Tabs>

@@ -18,7 +18,6 @@ const ConceptFilter: React.FC<ConceptFilterProps> = ({
     { id: "fixedIncome", label: "Renda Fixa" },
     { id: "index", label: "Índices" },
     { id: "retirement", label: "Aposentadoria" },
-    { id: "debt", label: "Dívida" }, // <- Novo filtro adicionado aqui
     { id: "other", label: "Outros" }
   ];
   

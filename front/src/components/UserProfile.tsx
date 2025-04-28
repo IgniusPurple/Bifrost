@@ -69,7 +69,7 @@ const UserProfile = () => {
               </div>
               <div>
                 <h2 className="text-xl font-bold">Olá, {profile.name}</h2>
-                <p className="text-finance-gray">Bem-vindo ao Biofrost</p>
+                <p className="text-finance-gray">Bem-vindo ao Bifröst</p>
               </div>
             </div>
             <Button variant="ghost" size="icon" onClick={handleEditClick}>
